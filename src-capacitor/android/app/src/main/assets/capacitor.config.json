@@ -1,0 +1,7 @@
+{
+  "appId": "org.capacitor.quasar.app",
+  "appName": "The Prague playgrounds app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

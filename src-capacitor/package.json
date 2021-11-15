@@ -1,0 +1,12 @@
+{
+  "name": "playgrounds-app",
+  "version": "0.0.1",
+  "description": "The App for searching playgrounds in Prague",
+  "author": "Radeg <radekbenes@centrum.cz>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^2.5.0",
+    "@capacitor/cli": "^2.0.0",
+    "@capacitor/core": "^2.0.0"
+  }
+}
