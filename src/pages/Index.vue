@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <q-card class="my-card"
+    <q-card class="q-ma-sm"
         v-for="item in data_playgroundsList"
         :key="item.id"
     >
@@ -18,6 +18,12 @@
       <q-card-section>{{ calcCrow(data_currentLat, data_currentLong, item.geometry.coordinates[1], item.geometry.coordinates[0]).toFixed(1) }} km</q-card-section>
     </q-card>
   </q-page>
+  <q-inner-loading
+    :showing="data_visible"
+    label="Please wait..."
+    label-class="text-teal"
+    label-style="font-size: 1.1em"
+  />
 </template>
 
 <script>
@@ -30,7 +36,8 @@ export default defineComponent({
     return {
       data_playgroundsList: [],
       data_currentLat: "",
-      data_currentLong: ""
+      data_currentLong: "",
+      data_visible: true
     }
   },
   methods: {
@@ -46,6 +53,7 @@ export default defineComponent({
           };
 
           axios.get('https://api.golemio.cz/v2/playgrounds/', options).then(res => {
+            this.data_visible = false;
             console.log(res.data.features);
             this.data_playgroundsList = res.data.features;
           });
