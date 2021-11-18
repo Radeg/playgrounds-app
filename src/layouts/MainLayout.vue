@@ -2,10 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-
-        <q-toolbar-title>
-          Playground Tracker
-        </q-toolbar-title>
+        <q-toolbar-title> Dětská hřiště </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -16,13 +13,11 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
 
-  setup () {
-
-  }
-})
+  setup() {},
+});
 </script>
