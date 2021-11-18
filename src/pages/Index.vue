@@ -4,7 +4,29 @@
       <img :src="item.properties.image.url" />
 
       <q-card-section>
-        <div class="text-h6">{{ item.properties.name }}</div>
+        <q-btn
+          fab
+          color="primary"
+          icon="place"
+          class="absolute"
+          style="top: 0; right: 12px; transform: translateY(-50%);"
+        />
+        <div class="row no-wrap items-center">
+          <div class="col text-h6 ellipsis">
+            {{ item.properties.name }}
+          </div>
+          <div class="col-auto text-grey text-caption q-pt-md q-ml-md q-mb-md row no-wrap items-center">
+            <q-icon name="place" />
+            {{
+              getDestination(
+                data_currentLat,
+                data_currentLong,
+                item.geometry.coordinates[1],
+                item.geometry.coordinates[0]
+              ).toFixed(1)
+            }} km
+          </div>
+        </div>
         <div class="text-subtitle2">{{ item.properties.perex }}</div>
       </q-card-section>
 
@@ -12,17 +34,6 @@
         {{ item.properties.content }}
       </q-card-section>
 
-      <q-card-section
-        >{{
-          getDestination(
-            data_currentLat,
-            data_currentLong,
-            item.geometry.coordinates[1],
-            item.geometry.coordinates[0]
-          ).toFixed(1)
-        }}
-        km</q-card-section
-      >
     </q-card>
   </q-page>
   <q-inner-loading
