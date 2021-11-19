@@ -11,11 +11,29 @@
           class="absolute"
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            {{ item.properties.name }}
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md q-ml-md q-mb-md row no-wrap items-center">
+        <div class="text-h6">
+          {{ item.properties.name }}
+        </div>
+        <div class="text-subtitle2">{{ item.properties.perex }}</div>
+      </q-card-section>
+
+      <q-card-section class="q-pt-none">
+        {{ item.properties.content }}
+      </q-card-section>
+
+      <q-card-section>
+        <iframe
+          width="450"
+          height="250"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways" allowfullscreen>
+        </iframe>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-actions>
+        <div class="text-caption">
             <q-icon name="place" />
             {{
               getDestination(
@@ -26,13 +44,7 @@
               ).toFixed(1)
             }} km
           </div>
-        </div>
-        <div class="text-subtitle2">{{ item.properties.perex }}</div>
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        {{ item.properties.content }}
-      </q-card-section>
+      </q-card-actions>
 
     </q-card>
   </q-page>
