@@ -9,7 +9,7 @@
           color="primary"
           icon="place"
           class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
+          style="top: 0; right: 12px; transform: translateY(-50%)"
         />
         <div class="text-h6">
           {{ item.properties.name }}
@@ -25,8 +25,11 @@
         <iframe
           width="450"
           height="250"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways" allowfullscreen>
+          frameborder="0"
+          style="border: 0"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways"
+          allowfullscreen
+        >
         </iframe>
       </q-card-section>
 
@@ -34,18 +37,18 @@
 
       <q-card-actions>
         <div class="text-caption">
-            <q-icon name="place" />
-            {{
-              getDestination(
-                data_currentLat,
-                data_currentLong,
-                item.geometry.coordinates[1],
-                item.geometry.coordinates[0]
-              ).toFixed(1)
-            }} km
-          </div>
+          <q-icon name="place" />
+          {{
+            getDestination(
+              data_currentLat,
+              data_currentLong,
+              item.geometry.coordinates[1],
+              item.geometry.coordinates[0]
+            ).toFixed(1)
+          }}
+          km
+        </div>
       </q-card-actions>
-
     </q-card>
   </q-page>
   <q-inner-loading
