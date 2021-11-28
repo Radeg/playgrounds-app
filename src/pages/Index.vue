@@ -8,7 +8,7 @@
 			<img :src="item.properties.image.url" />
 
 			<q-card-section>
-				<q-btn
+				<q-btn :to="'/map/' + item.geometry.coordinates[1] + ',' + item.geometry.coordinates[0]"
 					fab
 					color="primary"
 					icon="place"
@@ -23,18 +23,6 @@
 
 			<q-card-section class="q-pt-none">
 				{{ item.properties.content }}
-			</q-card-section>
-
-			<q-card-section>
-				<iframe
-					width="450"
-					height="250"
-					frameborder="0"
-					style="border: 0"
-					src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways"
-					allowfullscreen
-				>
-				</iframe>
 			</q-card-section>
 
 			<q-separator />
