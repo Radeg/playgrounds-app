@@ -5,7 +5,7 @@
 			v-for="item in data_playgroundsList"
 			:key="item.id"
 		>
-			<img :src="item.properties.image.url" />
+			<img v-lazy="item.properties.image.url" />
 
 			<q-card-section>
 				<q-btn :to="'/map/' + item.geometry.coordinates[1] + ',' + item.geometry.coordinates[0]"
