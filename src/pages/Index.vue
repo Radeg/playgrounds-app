@@ -8,7 +8,13 @@
 			<img v-lazy="item.properties.image.url" />
 
 			<q-card-section>
-				<q-btn :to="'/map/' + item.geometry.coordinates[1] + ',' + item.geometry.coordinates[0]"
+				<q-btn
+					:to="
+						'/map/' +
+						item.geometry.coordinates[1] +
+						',' +
+						item.geometry.coordinates[0]
+					"
 					fab
 					color="primary"
 					icon="place"
@@ -40,6 +46,13 @@
 					}}
 					km
 				</div>
+				<!-- <div
+					class="text-caption"
+					v-for="property in item.properties.properties"
+					:key="property.id"
+				>
+					{{ property.description }} |
+				</div> -->
 			</q-card-actions>
 		</q-card>
 	</q-page>
@@ -65,6 +78,7 @@ export default defineComponent({
 			data_visible: true,
 		};
 	},
+	computed: {},
 	methods: {
 		getPlaygroundList() {
 			if (navigator.geolocation) {
