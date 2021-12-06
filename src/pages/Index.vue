@@ -31,6 +31,24 @@
 				{{ item.properties.content }}
 			</q-card-section>
 
+			<q-card-section>
+				<q-expansion-item
+					expand-separator
+					icon="info"
+					label="Podrobnosti"
+					header-class="text-light-blue-6"
+				>
+					<q-card>
+						<q-card-section
+							v-for="property in item.properties.properties"
+							:key="property.id"
+						>
+							{{ property.description }}
+						</q-card-section>
+					</q-card>
+				</q-expansion-item>
+			</q-card-section>
+
 			<q-separator />
 
 			<q-card-actions>
@@ -46,13 +64,6 @@
 					}}
 					km
 				</div>
-				<!-- <div
-					class="text-caption"
-					v-for="property in item.properties.properties"
-					:key="property.id"
-				>
-					{{ property.description }} |
-				</div> -->
 			</q-card-actions>
 		</q-card>
 	</q-page>
