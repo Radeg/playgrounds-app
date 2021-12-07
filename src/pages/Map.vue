@@ -33,6 +33,6 @@ export default defineComponent({
 
 <style scoped>
 iframe {
-	height: 93vh;
+	height: 92.5vh;
 }
 </style>
