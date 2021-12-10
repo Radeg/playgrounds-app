@@ -8,7 +8,7 @@ const routes = [
     ]
   },
   {
-	path: '/map/:loc',
+	path: '/map',
 	component: () => import('layouts/MainLayout.vue'),
 	children: [
 		{ path: '', component: () => import('pages/Map.vue')}

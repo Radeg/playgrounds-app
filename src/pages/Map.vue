@@ -6,8 +6,10 @@
 			frameborder="0"
 			style="border: 0"
 			:src="
-				'https://www.google.com/maps/embed/v1/place?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&&q=' +
-				data_coordinates
+				'https://www.google.com/maps/embed/v1/directions?key=AIzaSyByMQs_LiFzIu_tTNcKnkTUhMysu3W14V0&mode=walking&origin=' +
+				data_coordinates_origin +
+				'&destination=' +
+				data_coordinates_destination
 			"
 			allowfullscreen
 		>
@@ -22,11 +24,13 @@ export default defineComponent({
 	name: "Map",
 	data() {
 		return {
-			data_coordinates: "",
+			data_coordinates_origin: "",
+			data_coordinates_destination: "",
 		};
 	},
 	created() {
-		this.data_coordinates = this.$route.params.loc;
+		this.data_coordinates_origin = this.$route.query.origin;
+		this.data_coordinates_destination = this.$route.query.destination;
 	},
 });
 </script>

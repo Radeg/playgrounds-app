@@ -9,12 +9,13 @@
 
 			<q-card-section>
 				<q-btn
-					:to="
-						'/map/' +
-						item.geometry.coordinates[1] +
-						',' +
-						item.geometry.coordinates[0]
-					"
+					:to="{
+						path: 'map',
+						query: {
+							origin: `${data_currentLat},${data_currentLong}`,
+							destination: `${item.geometry.coordinates[1]},${item.geometry.coordinates[0]}`,
+						},
+					}"
 					fab
 					color="primary"
 					icon="place"
