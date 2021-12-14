@@ -9,7 +9,7 @@ const routes = [
   },
   {
 	path: '/map',
-	component: () => import('layouts/MainLayout.vue'),
+	component: () => import('layouts/SidepageLayout.vue'),
 	children: [
 		{ path: '', component: () => import('pages/Map.vue')}
 	]
